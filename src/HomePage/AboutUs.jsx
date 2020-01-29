@@ -3,7 +3,10 @@ import { Row, Col } from "reactstrap";
 
 function AboutUs() {
     return (
-        <div className="min-vh-100 d-flex flex-column justify-content-around align-items-center">
+        <div
+            id="accueil"
+            className="min-vh-100 d-flex flex-column justify-content-around align-items-center"
+        >
             <Row className="flex-row justify-content-center align-items-center w-100">
                 <Col>
                     <h1 className="text-center pt-5">

@@ -28,7 +28,7 @@ function Header() {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem className="mx-4">
-                            <NavLink href="">Le cirque</NavLink>
+                            <NavLink href="#accueil">Le cirque</NavLink>
                         </NavItem>
                         <NavItem className="mx-4">
                             <NavLink href="">Tournée</NavLink>
