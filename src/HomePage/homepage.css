@@ -2,6 +2,11 @@
     background-image: url("../img/circus-lights-1193038.jpg");
 }
 
+.bg-img-about {
+    background-image: url("../img/circus-14134862.jpg");
+    background-size: cover;
+}
+
 .fontAccueil {
     font-size: 800%;
 }
