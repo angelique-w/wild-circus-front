@@ -1,5 +1,7 @@
 import React from "react";
 import { Row, Col, Button } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkerAlt, faClock } from "@fortawesome/free-solid-svg-icons";
 
 function ProchaineRepresentation() {
     return (
@@ -18,14 +20,16 @@ function ProchaineRepresentation() {
                 style={{ backgroundColor: "rgb(242, 242, 242, 0.5)" }}
                 className=" flex-row justify-content-center align-items-center w-75"
             >
-                <Col xs={12} lg={{ size: 4 }}>
-                    <h3 className="text-center mb-4 ">En ce moment à VILLE</h3>
+                <Col xs={12} lg={{ size: 4 }} className="text-center">
+                    <FontAwesomeIcon icon={faMapMarkerAlt} size="4x" />
+                    <h3 className="text-center my-4 ">En ce moment à VILLE</h3>
                     <p className="text-center ">Du date au date</p>
                     <hr style={{ width: 200 }} />
                     <p className="text-center "> LIEU</p>
                 </Col>
-                <Col xs={12} lg={{ size: 4 }}>
-                    <h3 className="text-center mb-4 ">
+                <Col xs={12} lg={{ size: 4 }} className="text-center">
+                    <FontAwesomeIcon icon={faClock} size="4x" />
+                    <h3 className="text-center my-4 ">
                         Prochaine représentation
                     </h3>
                     <p className="text-center ">Le date</p>
