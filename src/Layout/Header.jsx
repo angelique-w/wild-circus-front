@@ -21,13 +21,13 @@ function Header() {
             <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">Wild Circus</NavbarBrand>
                 <NavLink href="">
-                    <Button color="primary" size="lg" className="mx-4">
+                    <Button color="primary" size="lg">
                         Réservez vos places
                     </Button>
                 </NavLink>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
+                    <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink href="">Le cirque</NavLink>
                         </NavItem>
