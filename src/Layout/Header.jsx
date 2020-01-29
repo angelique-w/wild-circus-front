@@ -7,8 +7,7 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Button,
-    NavbarText
+    Button
 } from "reactstrap";
 
 function Header() {
@@ -17,7 +16,7 @@ function Header() {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
+        <div className="fixed-top">
             <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">Wild Circus</NavbarBrand>
                 <NavLink href="">
