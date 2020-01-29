@@ -6,12 +6,12 @@ function Footer() {
         <footer>
             <hr />
             <Row>
-                <Col xs="6">
+                <Col xs={12} sm={6}>
                     <h4 className="text-center container-fluid ml-5">
                         Wild Circus
                     </h4>
                 </Col>
-                <Col xs="6">
+                <Col xs={12} sm={6}>
                     <div className="text-center ml-5">
                         Réalisation : Angélique Wons
                     </div>
