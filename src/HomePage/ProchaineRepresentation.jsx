@@ -40,7 +40,7 @@ function ProchaineRepresentation() {
                 <Col xs={12} lg={{ size: 4 }}>
                     <div className="text-lg-right text-center my-2">
                         <Button color="primary" size="lg">
-                            Réservez vos places
+                            Réservez une place
                         </Button>
                     </div>
                 </Col>

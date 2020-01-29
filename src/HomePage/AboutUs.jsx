@@ -20,6 +20,7 @@ function AboutUs() {
                     xs={12}
                     lg={{ size: 4 }}
                     style={{ backgroundColor: "rgb(242, 242, 242, 0.5)" }}
+                    className="p-4"
                 >
                     <h2 className=" text-center mb-5">Notre histoire</h2>
                     <p className=" text-center">
@@ -32,6 +33,7 @@ function AboutUs() {
                     xs={12}
                     lg={{ size: 4, offset: 1 }}
                     style={{ backgroundColor: "rgb(242, 242, 242, 0.5)" }}
+                    className="p-4"
                 >
                     <h2 className=" text-center mb-5">Nos ambitions</h2>
                     <p className=" text-center">
