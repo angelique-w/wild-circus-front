@@ -6,11 +6,15 @@ function Footer() {
         <footer>
             <hr />
             <Row>
-                <Col>
-                    <h4 className="container-fluid ml-5">Wild Circus</h4>
+                <Col xs="6">
+                    <h4 className="text-center container-fluid ml-5">
+                        Wild Circus
+                    </h4>
                 </Col>
-                <Col>
-                    <div className="ml-5">Réalisation : Angélique Wons</div>
+                <Col xs="6">
+                    <div className="text-center ml-5">
+                        Réalisation : Angélique Wons
+                    </div>
                 </Col>
             </Row>
         </footer>
