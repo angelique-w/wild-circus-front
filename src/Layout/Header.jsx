@@ -28,13 +28,13 @@ function Header() {
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <NavItem>
+                        <NavItem className="mx-4">
                             <NavLink href="">Le cirque</NavLink>
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="mx-4">
                             <NavLink href="">Tournée</NavLink>
                         </NavItem>
-                        <NavItem>
+                        <NavItem className="mx-4">
                             <NavLink href="">Contact</NavLink>
                         </NavItem>
                     </Nav>
