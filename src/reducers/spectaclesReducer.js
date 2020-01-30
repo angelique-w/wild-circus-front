@@ -1,7 +1,7 @@
 import { SET_SPECTACLES } from "./actionTypes";
 
 const initialSpectaclesState = {
-    spectacles: {}
+    spectacles: []
 };
 
 const spectaclesReducer = (state = initialSpectaclesState, action) => {

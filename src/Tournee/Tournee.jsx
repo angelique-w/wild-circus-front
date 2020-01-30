@@ -1,31 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, CardImg } from "reactstrap";
-import axios from "axios";
-import { orderBy } from "lodash";
 import { connect } from "react-redux";
 
-import { setSpectacles } from "../reducers/actions";
 import Layout from "../Layout/Layout";
 import Spectacle from "./Spectacle";
 
 function Tournee({ spectacles }) {
-    // const [spectacles, setSpectaclesHooks] = useState([]);
-
-    // useEffect(() => {
-    //     axios
-    //         .get("http://localhost:8000/spectacles/")
-    //         .then(res => {
-    //             const datas = res.data;
-    //             const orderedSpectacles = orderBy(datas, ["date"], "asc");
-    //             setSpectaclesHooks(orderedSpectacles);
-    //             setSpectacles(orderedSpectacles);
-    //         })
-    //         .catch(err => {
-    //             console.log(err.message);
-    //             throw err;
-    //         });
-    // }, []);
-
     return (
         <Layout>
             <div
@@ -84,12 +64,6 @@ function Tournee({ spectacles }) {
         </Layout>
     );
 }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         setSpectacles: spectacles => dispatch(setSpectacles(spectacles))
-//     };
-// };
 
 const mapStateToProps = state => ({
     spectacles: state.spectacles

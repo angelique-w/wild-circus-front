@@ -20,7 +20,7 @@ import { orderBy } from "lodash";
 
 import { setSpectacles } from "../reducers/actions";
 
-function ProchaineRepresentation({ setSpectacles, spectacles }) {
+function ProchaineRepresentation({ setSpectacles }) {
     const [isOpen, setIsOpen] = useState(false);
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -35,6 +35,7 @@ function ProchaineRepresentation({ setSpectacles, spectacles }) {
             .get("http://localhost:8000/spectacles/")
             .then(res => {
                 const datas = res.data;
+                console.log(res.data);
                 const orderedSpectacles = orderBy(datas, ["date"], "asc");
                 setSpectaclesHooks(orderedSpectacles);
                 setSpectacles(orderedSpectacles);
@@ -101,21 +102,30 @@ function ProchaineRepresentation({ setSpectacles, spectacles }) {
                 <Col xs={12} lg={{ size: 4 }} className="text-center">
                     <FontAwesomeIcon icon={faMapMarkerAlt} size="4x" />
                     <h3 className="text-center my-4 ">
-                        En ce moment à {nextSpectacle.ville}
+                        En ce moment à {nextSpectacle && nextSpectacle.ville}
                     </h3>
                     <hr style={{ width: 200 }} />
-                    <p className="text-center "> {nextSpectacle.adresse}</p>
+                    <p className="text-center ">
+                        {" "}
+                        {nextSpectacle && nextSpectacle.adresse}
+                    </p>
                 </Col>
                 <Col xs={12} lg={{ size: 4 }} className="text-center">
                     <FontAwesomeIcon icon={faClock} size="4x" />
                     <h3 className="text-center my-4 ">
                         Prochaine représentation
                     </h3>
-                    <p className="text-center ">Le {nextSpectacle.date}</p>
+                    <p className="text-center ">
+                        Le {nextSpectacle && nextSpectacle.date}
+                    </p>
                     <hr style={{ width: 200 }} />
-                    <p className="text-center "> {nextSpectacle.adresse}</p>
+                    <p className="text-center ">
+                        {" "}
+                        {nextSpectacle && nextSpectacle.adresse}
+                    </p>
                     <p className="text-center pb-2">
-                        Places restantes : {nextSpectacle.placesRestantes}
+                        Places restantes :{" "}
+                        {nextSpectacle && nextSpectacle.placesRestantes}
                     </p>
                 </Col>
             </Row>
@@ -226,11 +236,8 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-const mapStateToProps = state => ({
-    spectacles: state.spectacles
-});
+// const mapStateToProps = state => ({
+//     spectacles: state.spectacles
+// });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ProchaineRepresentation);
+export default connect(null, mapDispatchToProps)(ProchaineRepresentation);

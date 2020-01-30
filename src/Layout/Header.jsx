@@ -22,13 +22,16 @@ function Header() {
                 <Link to="/">
                     <NavbarBrand>Wild Circus</NavbarBrand>
                 </Link>
-                <NavLink href="">
-                    <Link to="/Tournee">
-                        <Button color="primary" size="lg">
-                            Réservez vos places
-                        </Button>
-                    </Link>
-                </NavLink>
+                <Link to="/Tournee">
+                    <Button color="primary" size="lg" className="mx-2">
+                        Réservez vos places
+                    </Button>
+                </Link>
+                <Link to="/Backoffice">
+                    <Button color="info" size="lg" className="mx-2">
+                        Admin
+                    </Button>
+                </Link>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
