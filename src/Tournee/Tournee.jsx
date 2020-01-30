@@ -32,8 +32,8 @@ function Tournee() {
                 <Row className="pb-5">
                     <h1>Tournée</h1>
                 </Row>
-                <Row>
-                    <Col xs={12} className="text-center pb-3">
+                <Row className="pb-5">
+                    <Col xs={12} className="text-center pb-5">
                         <h2>Le programme</h2>
                     </Col>
                     <Col
@@ -49,7 +49,7 @@ function Tournee() {
                             />
                         </Card>
                         <a href="https://fr.freepik.com/photos-vecteurs-libre/prospectus">
-                            Affiche
+                            Affiche by ...
                         </a>
                     </Col>
 
