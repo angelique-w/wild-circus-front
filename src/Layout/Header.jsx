@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -18,7 +19,9 @@ function Header() {
     return (
         <div className="fixed-top">
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Wild Circus</NavbarBrand>
+                <Link to="/">
+                    <NavbarBrand>Wild Circus</NavbarBrand>
+                </Link>
                 <NavLink href="">
                     <Button color="primary" size="lg">
                         Réservez vos places
@@ -31,10 +34,14 @@ function Header() {
                             <NavLink href="/#accueil">Le cirque</NavLink>
                         </NavItem>
                         <NavItem className="mx-4">
-                            <NavLink href="">Tournée</NavLink>
+                            <Link to="/Tournee">
+                                <NavLink>Tournée</NavLink>
+                            </Link>
                         </NavItem>
                         <NavItem className="mx-4">
-                            <NavLink href="/contact">Contact</NavLink>
+                            <Link to="/contact">
+                                <NavLink>Contact</NavLink>
+                            </Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
