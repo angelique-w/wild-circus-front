@@ -23,9 +23,11 @@ function Header() {
                     <NavbarBrand>Wild Circus</NavbarBrand>
                 </Link>
                 <NavLink href="">
-                    <Button color="primary" size="lg">
-                        Réservez vos places
-                    </Button>
+                    <Link to="/Tournee">
+                        <Button color="primary" size="lg">
+                            Réservez vos places
+                        </Button>
+                    </Link>
                 </NavLink>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
