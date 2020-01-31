@@ -54,20 +54,20 @@ function Spectacle({ spectacle }) {
 
     return (
         <div>
-            <Col xs={12} lg={6}>
+            <Col xs={12}>
                 <h4 className="text-center py-2 mt-5 text-danger">
                     {spectacle.ville}
                 </h4>
             </Col>
-            <Col xs={12} lg={6}>
+            <Col xs={12}>
                 <p className="text-center">{spectacle.date}</p>
             </Col>
-            <Col xs={12} lg={6}>
+            <Col xs={12}>
                 <p className="text-center pb-2">
                     Places restantes : {spectacle.placesRestantes}
                 </p>
             </Col>
-            <Col xs={12} lg={6}>
+            <Col xs={12}>
                 <div className="text-center">
                     <Button color="info" size="lg" onClick={toggle}>
                         Réservez une place <br />
