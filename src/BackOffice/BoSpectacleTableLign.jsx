@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Button, Modal, ModalHeader, ModalBody, Table } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { setSpectacles } from "../reducers/actions";
 
-function BoSpectacleTableLign({ spectacle }) {
+function BoSpectacleTableLign({ spectacle, buttonLabel, className }) {
+    const [modal, setModal] = useState(false);
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        setUsers(spectacle.Users);
+    }, []);
+
     const deleteASpectacle = () => {
         console.log("delete ok");
         axios
@@ -16,6 +26,10 @@ function BoSpectacleTableLign({ spectacle }) {
                 console.log(err.message);
                 throw err;
             });
+    };
+
+    const toggle = () => {
+        setModal(!modal);
     };
 
     return (
@@ -37,7 +51,52 @@ function BoSpectacleTableLign({ spectacle }) {
                     onClick={() => deleteASpectacle()}
                 />
             </td>
-            <td className="text-center">Voir les réservations</td>
+            <td className="text-center">
+                <span style={{ cursor: "pointer" }} onClick={toggle}>
+                    Voir les réservations
+                </span>
+                <Modal isOpen={modal} toggle={toggle} className={className}>
+                    <ModalHeader toggle={toggle}>
+                        Réservations - Spectacle de {spectacle.ville} le{" "}
+                        {spectacle.date}
+                    </ModalHeader>
+                    <ModalBody>
+                        <Table responsive striped>
+                            <thead>
+                                <tr>
+                                    <th>Prénom</th>
+                                    <th>Nom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {users[0] ? (
+                                    <>
+                                        {users.map(user => {
+                                            return (
+                                                <tr>
+                                                    <th
+                                                        scope="row"
+                                                        className="text-center"
+                                                    >
+                                                        {user.firstName}
+                                                    </th>
+                                                    <td className="text-center">
+                                                        {user.lastName}
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
+                                    </>
+                                ) : (
+                                    <p className="text-center mt-4">
+                                        Aucune réservation pour ce spectacle
+                                    </p>
+                                )}
+                            </tbody>
+                        </Table>
+                    </ModalBody>
+                </Modal>
+            </td>
         </tr>
     );
 }
