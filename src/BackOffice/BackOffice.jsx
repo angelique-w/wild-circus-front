@@ -3,10 +3,13 @@ import { Row, Table } from "reactstrap";
 import { connect } from "react-redux";
 import axios from "axios";
 import { orderBy } from "lodash";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import { setSpectacles } from "../reducers/actions";
 import Layout from "../Layout/Layout";
 import BoSpectacleTableLign from "./BoSpectacleTableLign";
+import AddNewSpectacle from "./AddNewSpectacle";
 
 function BackOffice({ spectacles, setSpectacles }) {
     const [spectaclesHooks, setSpectaclesHooks] = useState([]);
@@ -33,10 +36,6 @@ function BackOffice({ spectacles, setSpectacles }) {
         fetchSpectacles();
     }, []);
 
-    // useEffect(() => {
-    //     fetchSpectacles();
-    // }, [spectacles]);
-
     return (
         <Layout>
             <div
@@ -47,6 +46,9 @@ function BackOffice({ spectacles, setSpectacles }) {
                     <h1 style={{ paddingBottom: 90 }}>
                         Programmation des spectacles
                     </h1>
+                </Row>
+                <Row className="mb-5">
+                    <AddNewSpectacle />
                 </Row>
                 <Row>
                     <Table responsive striped>
